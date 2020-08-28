@@ -33,7 +33,7 @@ const showModal = ()=>{
 
 const add = ()=>{
     const name = nameOfTransaction.value;
-    const amountValue = amount.value;
+    const amountValue = parseFloat(amount.value).toFixed(2);
     const categoryValue = category.value;
     
     const isValid = checkFormInput();
@@ -130,26 +130,27 @@ const addTransaction = (name, amount, category)=>{
     const div = document.createElement('div');
     div.setAttribute('class', `panel`);    
 
-    const stworzReszte = (znak)=>{
+    const stworzReszte = (znak, color)=>{
         const h3First = document.createElement('h3');
         h3First.innerHTML = `<i class="${walletIcons.icons[category]}"></i> ${name}`;
         div.appendChild(h3First);
     
         const h3Second = document.createElement('h3');
-        h3Second.innerHTML = `<span class = "kwota"> ${znak} ${amount}</span> zł <i class="fas fa-times"></i>`;
+        h3Second.innerHTML = `<span class = "kwota" style=color:${color}> ${znak} ${amount}</span> zł <i class="fas fa-times"></i>`;
+        h3Second.style.color = color;
         div.appendChild(h3Second);
     }
     if(category === "income"){
         profits.appendChild(div);
         moneyInWallet += parseFloat(amount);
         wallet.textContent = moneyInWallet.toFixed(2);
-        stworzReszte("+");
+        stworzReszte("+", "#3eb63e");
         
     }else{
         expenses.appendChild(div);
         moneyInWallet -= parseFloat(amount);
         wallet.textContent = moneyInWallet.toFixed(2);
-        stworzReszte("-");  
+        stworzReszte("-", "red");  
     }
 
 
