@@ -340,13 +340,13 @@ option{
     }
     
     .panel{
-        justify-content: center;
+        /* justify-content: center; */
         margin: 6px;  
     }
 
-    .panel h3:nth-of-type(1){
+    /* .panel h3:nth-of-type(1){
         display: none;
-    }
+    } */
     .modal-container{
         width: 90%;
     }
@@ -356,6 +356,14 @@ option{
     }
 }
 
+@media(max-width:630px){
+    .panel{
+        justify-content: space-between;
+    }
+    .panel h3:nth-of-type(1){
+        display: none;
+    }
+}
 @media(max-width:400px){
     .modal h1{
         font-size: 18px;
