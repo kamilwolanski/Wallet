@@ -1,0 +1,383 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+
+}
+body{
+    background: linear-gradient(322deg, rgba(150,130,130,0.49653364763874297) 69%, rgba(213,213,213,0.8494748241093313) 87%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%), url('imgs/desk.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    /* width: 100vw; */
+}
+
+.wrapper{
+    margin: 0 auto;
+    display: block;
+    /* width: 100vw; */
+    /* min-width: 500px; */
+    min-height: 100vh;
+}
+
+header{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.logo{
+    grid-column: 2/3;
+    
+}
+
+header h1{
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    padding-bottom: 10px;
+}
+header h2{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wallet{
+    font-family: 'Poppins', sans-serif;
+}
+
+main{
+   margin-top: 40px;
+}
+/*Sekcja 1*/
+
+.section.left{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.section.left h2{
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
+}
+.profits-and-expenses{
+    width: 80%;
+    margin: 10px auto;
+    background-color: rgba(214, 214, 218, 0.575);
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.div {
+    width: 50%;
+    margin: 0 10px;
+    min-height: 100px;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    border-bottom: 1px solid rgb(218, 218, 210);
+}
+
+.div h2{
+    padding-top: 10px;
+}
+
+.profits h2{
+    color: rgb(62, 182, 62);
+}
+
+.expenses h2{
+    color: red;
+}
+
+/* Sekcja 2*/
+
+.section.right{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.section.right h2{
+    font-size: 35px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.section.right h1{
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+
+.button {
+    border: 1px solid rgb(134, 117, 117);
+    border-radius: 7px;
+    padding: 15px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.button{
+    /* display: inline-block; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.button::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #14c759;
+    border-radius: 10rem;
+    z-index: -2;
+}
+
+.button::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color:#17ac50;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+
+}
+.button:hover{
+    color: white;
+}
+.button:hover:before{
+    width: 100%;
+}
+
+.delete::after{
+    background-color: #cf0c0c;
+}
+
+.delete::before{
+    background-color:#c21212 ;
+}
+
+.cancel::after{
+    background-color: #8f8888;
+}
+
+.cancel::before{
+    background-color: #807b7b;
+}
+.circle-icons{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+.circle{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 30px;
+    background-color: lightsalmon;
+    cursor: pointer;
+}
+
+.form-box p{
+    color: white;
+}
+.fa-times{
+    cursor: pointer;
+    padding: 5px;
+}
+
+.fa-times:hover{
+    color: red;
+}
+.modal-shadow{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    /* z-index: -5; */
+    left: 0;
+    top:0;
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(63,122,188);
+    background: linear-gradient(322deg, rgba(63,122,188,0.49653364763874297) 0%, rgba(61,118,184,1) 56%, rgba(57,111,175,1) 94%, rgba(63,122,188,1) 100%);
+}
+
+.modal-container{
+    width: 60%;
+    height: 80%;
+    /* background-color: lightseagreen; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    color: white;
+}
+.modal h1{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal label{
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    display: block;
+    margin-top: 20px;
+}
+
+.modal p{
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+input, select{
+    /* margin-bottom: 25px; */
+    padding: 8px 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(185, 185, 185);
+    color: black;
+}
+
+option{
+    color: black;
+}
+.modal>.buttons{
+    justify-content: center;
+}
+
+.modal>.buttons>.button{
+    border: 1px solid white;
+    margin: 15px;
+    padding: 15px 30px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    /* transition: .3s; */
+
+}
+
+.modal>.buttons>.button:hover{
+    background-color: rgb(46, 46, 228);
+}
+
+@media(max-width:950px){
+    .logo{
+        grid-column: 1/3;
+    }
+    .modal-container{
+        width: 80%;
+    }
+}
+
+@media(max-width:750px){
+    header{
+        display: flex;
+        flex-direction: column;
+    }
+    main{
+        margin-top: 0;
+    }
+    .account-balance{
+        margin-top: 20px;
+    }
+    .account-balance h2{
+        font-weight: 300;
+    }
+    header{
+        padding: 50px 0 0 0;
+    }
+    .section.right{
+        width: 90%;
+    }
+    .button{
+        margin:0 10px;
+    }
+    
+    .panel{
+        justify-content: center;
+        margin: 6px;  
+    }
+
+    .panel h3:nth-of-type(1){
+        display: none;
+    }
+    .modal-container{
+        width: 90%;
+    }
+
+    .section.left h2{
+        font-size: 25px;
+    }
+}
+
+@media(max-width:400px){
+    .modal h1{
+        font-size: 18px;
+    }
+
+    .modal label{
+        font-size: 20px;
+    }
+
+    .modal p{
+        font-size: 15px;
+    }
+
+    .button{
+        font-size: 10px;
+    }
+
+    .section.left h2{
+        font-size: 15px;
+    }
+
+    .panel h3{
+        font-size: 15px;
+    }
+}
