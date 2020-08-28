@@ -100,9 +100,9 @@ const closePanel = (e)=>{
     const valueOfElement = e.target.parentElement.childNodes[0].textContent
 
     if(e.target.parentElement.parentElement.parentElement.classList[1] == "profits"){
-        moneyInWallet -= parseInt(valueOfElement.slice(2, valueOfElement.length));
+        moneyInWallet -= parseFloat(valueOfElement.slice(2, valueOfElement.length));
     }else{
-        moneyInWallet += parseInt(valueOfElement.slice(2, valueOfElement.length));
+        moneyInWallet += parseFloat(valueOfElement.slice(2, valueOfElement.length));
     }
 
     wallet.textContent = moneyInWallet;
@@ -140,13 +140,13 @@ const addTransaction = (name, amount, category)=>{
     }
     if(category === "income"){
         profits.appendChild(div);
-        moneyInWallet += parseInt(amount);
+        moneyInWallet += parseFloat(amount);
         wallet.textContent = moneyInWallet;
         stworzReszte("+");
         
     }else{
         expenses.appendChild(div);
-        moneyInWallet -= parseInt(amount);
+        moneyInWallet -= parseFloat(amount);
         wallet.textContent = moneyInWallet;
         stworzReszte("-");  
     }
