@@ -65,6 +65,7 @@ const add = ()=>{
     }
     changeColorInWallet();
 
+
 }
 
 const checkFormInput = ()=>{
@@ -141,13 +142,13 @@ const addTransaction = (name, amount, category)=>{
     if(category === "income"){
         profits.appendChild(div);
         moneyInWallet += parseFloat(amount);
-        wallet.textContent = moneyInWallet;
+        wallet.textContent = moneyInWallet.toFixed(2);
         stworzReszte("+");
         
     }else{
         expenses.appendChild(div);
         moneyInWallet -= parseFloat(amount);
-        wallet.textContent = moneyInWallet;
+        wallet.textContent = moneyInWallet.toFixed(2);
         stworzReszte("-");  
     }
 
