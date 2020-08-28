@@ -106,7 +106,7 @@ const closePanel = (e)=>{
         moneyInWallet += parseFloat(valueOfElement.slice(2, valueOfElement.length));
     }
 
-    wallet.textContent = moneyInWallet;
+    wallet.textContent = moneyInWallet.toFixed(2);
 
     changeColorInWallet();
     e.target.parentElement.parentElement.remove();
